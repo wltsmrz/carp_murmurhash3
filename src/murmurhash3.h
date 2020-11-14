@@ -311,7 +311,7 @@ Array murmur3_32x4(const String* key, int seed) {
 
 Array murmur3_64x2(const String* key, int seed) {
   Array chars = String_chars(key);
-  Array out = { .len = 2, .capacity = 2, .data  = (uint64_t*)malloc(4 * sizeof(uint64_t)) };
+  Array out = { .len = 2, .capacity = 2, .data  = (uint64_t*)malloc(2 * sizeof(uint64_t)) };
 
   size_t len = strlen(chars.data);
 
