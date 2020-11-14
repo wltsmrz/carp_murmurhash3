@@ -1,0 +1,8 @@
+(relative-include "src/carp_murmurhash3.h")
+
+(defmodule Murmur3
+ (register murmur3-32x1 (Fn [&String Int] (Uint32)) "murmur3_32x1")
+ (register murmur3-32x4 (Fn [&String Int] (Array Uint32)) "murmur3_32x4")
+ (register murmur3-64x2 (Fn [&String Int] (Array Uint64)) "murmur3_64x2")
+)
+
