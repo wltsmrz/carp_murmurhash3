@@ -1,0 +1,61 @@
+(load "Test.carp")
+(load "../main.carp")
+(use Test)
+
+(defn main []
+  (with-test test
+    (assert-equal test
+      &(Murmur3.hash-32x1-hex &(String.to-bytes "Hello, world!") 1234)
+      "faf6cdb3"
+      "32x1-hex")
+    (assert-equal test
+      &(Murmur3.hash-32x1-hex &(String.to-bytes "Hello, world!") 4321)
+      "bf505788"
+      "32x1-hex - different seed")
+    (assert-equal test
+      &(Murmur3.hash-32x1-hex &(String.to-bytes "xxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+1234)
+      "8905ac28"
+      "32x1-hex - bigass string")
+    (assert-equal test
+      &(Murmur3.hash-32x1-hex &(String.to-bytes "") 1234)
+      "0f2cc00b"
+      "32x1-hex - empty string")
+
+    (assert-equal test
+      &(Murmur3.hash-32x4-hex &(String.to-bytes "Hello, world!") 123)
+      "61c9129e5a1aacd7a41621629e37c886"
+      "32x4-hex")
+    (assert-equal test
+      &(Murmur3.hash-32x4-hex &(String.to-bytes "Hello, world!") 321)
+      "d5fbdcb3c26c4193045880c5a7170f0f"
+      "32x4-hex - different seed")
+    (assert-equal test
+      &(Murmur3.hash-32x4-hex &(String.to-bytes "xxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+123)
+      "5e40bab278825a164cf929d31fec6047"
+      "32x4-hex - bigass string")
+    (assert-equal test
+      &(Murmur3.hash-32x4-hex &(String.to-bytes "") 123)
+      "fedc524526f3e79926f3e79926f3e799"
+      "32x4-hex - empty string")
+
+    (assert-equal test
+      &(Murmur3.hash-64x2-hex &(String.to-bytes "Hello, world!") 123)
+      "8743acad421c8c73d373c3f5f19732fd"
+      "64x2-hex")
+    (assert-equal test
+      &(Murmur3.hash-64x2-hex &(String.to-bytes "Hello, world!") 321)
+      "f86d4004ca47f42bb9546c7979200aee"
+      "64x2-hex - different seed")
+    (assert-equal test
+      &(Murmur3.hash-64x2-hex &(String.to-bytes "xxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+123)
+      "becf7e04dbcf74637751664ef66e73e0"
+      "64x2-hex - bigass string")
+    (assert-equal test
+      &(Murmur3.hash-64x2-hex &(String.to-bytes "") 123)
+      "4cd9597081679d1abd92f8784bace33d"
+      "64x2-hex - empty string")
+))
+
