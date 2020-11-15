@@ -3,7 +3,7 @@
 Carp bindings for murmurhash3
 
 ```clojure
-(load "https://github.com/wltsmrz/carp_murmurhash3@v0.3.0")
+(load "https://github.com/wltsmrz/carp_murmurhash3@v0.3.1")
 
 (defn-do main []
   ; 32 bit hash, returns uint32

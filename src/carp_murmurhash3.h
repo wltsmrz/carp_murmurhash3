@@ -28,7 +28,7 @@ Array murmur3_32x4(const Array* key, int seed) {
 }
 
 Array murmur3_64x2(const Array* key, int seed) {
-  Array out = { .len = 4, .capacity = 4, .data  = (uint64_t*)malloc(2 * sizeof(uint64_t)) };
+  Array out = { .len = 2, .capacity = 2, .data  = (uint64_t*)malloc(2 * sizeof(uint64_t)) };
   MurmurHash3_x64_128(key->data, key->len, seed, out.data);
   return out;
 }
