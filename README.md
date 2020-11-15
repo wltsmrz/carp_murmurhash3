@@ -3,7 +3,7 @@
 Carp bindings for murmurhash3
 
 ```clojure
-(load "https://github.com/wltsmrz/carp_murmurhash3@v0.3.2")
+(load "https://github.com/wltsmrz/carp_murmurhash3@v0.4.0")
 
 (defn main []
   (let-do [bytes (String.to-bytes "whatever") seed 90210]
