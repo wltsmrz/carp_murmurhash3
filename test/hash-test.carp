@@ -13,8 +13,7 @@
       "bf505788"
       "32x1-hex - different seed")
     (assert-equal test
-      &(Murmur3.hash-32x1-hex &(String.to-bytes "xxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-1234)
+      &(Murmur3.hash-32x1-hex &(String.to-bytes "xxxxxxxxxxxxxxxxxxxxxxxxxxxx") 1234)
       "8905ac28"
       "32x1-hex - bigass string")
     (assert-equal test
@@ -31,8 +30,7 @@
       "d5fbdcb3c26c4193045880c5a7170f0f"
       "32x4-hex - different seed")
     (assert-equal test
-      &(Murmur3.hash-32x4-hex &(String.to-bytes "xxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-123)
+      &(Murmur3.hash-32x4-hex &(String.to-bytes "xxxxxxxxxxxxxxxxxxxxxxxxxxxx") 123)
       "5e40bab278825a164cf929d31fec6047"
       "32x4-hex - bigass string")
     (assert-equal test
@@ -49,8 +47,7 @@
       "f86d4004ca47f42bb9546c7979200aee"
       "64x2-hex - different seed")
     (assert-equal test
-      &(Murmur3.hash-64x2-hex &(String.to-bytes "xxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-123)
+      &(Murmur3.hash-64x2-hex &(String.to-bytes "xxxxxxxxxxxxxxxxxxxxxxxxxxxx") 123)
       "becf7e04dbcf74637751664ef66e73e0"
       "64x2-hex - bigass string")
     (assert-equal test
