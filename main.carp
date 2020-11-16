@@ -1,9 +1,6 @@
-(relative-include "src/carp_murmurhash3.h")
 
 (defmodule Murmur3
-  (register hash-32x1->hex (Fn [&Uint32] String) "murmur3_32_to_hex")
-  (register hash-32x4->hex (Fn [&(Array Uint32)] String) "murmur3_128_to_hex")
-  (register hash-64x2->hex (Fn [&(Array Uint32)] String) "murmur3_128_to_hex")
+  (relative-include "src/carp_murmurhash3.h")
 
   (register hash-32x1 (Fn [&(Array Byte) Int] Uint32) "murmur3_32x1")
   (register hash-32x4 (Fn [&(Array Byte) Int] (Array Uint32)) "murmur3_32x4")
