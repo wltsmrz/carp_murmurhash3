@@ -3,10 +3,10 @@
 Carp bindings for murmurhash3
 
 ```clojure
-(load "https://github.com/wltsmrz/carp_murmurhash3@v0.4.1")
+(load "https://github.com/wltsmrz/carp_murmurhash3@v0.5.0")
 
 (defn main []
-  (let-do [bytes (String.to-bytes "whatever") seed 90210]
+  (let-do [bytes (String.to-bytes "whatever") seed (Uint32.from-long 90210l)]
     (IO.println &(Uint32.str (Murmur3.hash-32x1 &bytes seed)))
     ; Uint32(97406411)
 
@@ -25,6 +25,5 @@ Carp bindings for murmurhash3
     (IO.println &(Murmur3.hash-64x2-hex &bytes seed))
     ; fae6c265ccefaf2beb2442565be459b8
 ))
-
 ```
 
